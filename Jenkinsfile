@@ -4,7 +4,7 @@
         stage('Pull') { 
             steps {
                 echo " This is from Pull pipeline" 
-                git 'https://github.com/siddharthsharma2019/Pipeline-Project.git'
+                // git 'https://github.com/siddharthsharma2019/Pipeline-Project.git'
 				sh 'java -version'				
             }
         }
