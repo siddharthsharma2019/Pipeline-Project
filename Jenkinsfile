@@ -1,17 +1,19 @@
  pipeline {
     agent any 
-    stages {
-        stage('Pull') { 
+    stages 
+	{
+        /*stage('Pull') { 
             steps {
                 echo " This is from Pull pipeline" 
                 // git 'https://github.com/siddharthsharma2019/Pipeline-Project.git'
 				sh 'java -version'				
             }
-        }
+        }*/
         stage('Clean Build') { 
             steps {
-                echo " This is from  test pipeline" 
-                sh 'mvn clean package'
+                echo " This is from  Build pipeline" 
+                sh 'java -version'
+				sh 'mvn clean package'
 				sh 'mvn -version'
             }
         }
