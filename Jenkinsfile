@@ -17,10 +17,10 @@
         }
         stage('Deploy') { 
             steps {
-                echo " This is from  deploy pipeline" 
+                echo " This is from deploy pipeline" 
 				sh 'docker build -t webapp-sid .'
 				sh 'docker stop sid-webcontainer'
-				Sh 'docker rm sid-webcontainer'
+				sh 'docker rm sid-webcontainer'
 				sh 'docker run -itd -p 8095:8080 --name sid-webcontainer webapp-sid'
             }
         }
