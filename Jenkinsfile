@@ -6,13 +6,20 @@
             steps {
                 echo " This is from Pull pipeline" 
                 // git 'https://github.com/siddharthsharma2019/Pipeline-Project.git'
-				sh 'java -version'				
+				sh 'java -version'					
             }
         }*/
-        stage('Clean Build') { 
+        stage('Sonar Quality test') { 
+            steps {
+                echo " This is from Sonar test " 
+                sh 'sonar:sonar'				
+				echo " Code is having good quality  "				
+            }
+        }
+		stage('Clean Build') { 
             steps {
                 echo " This is from  Build pipeline" 
-                sh 'java -version'
+                sh 'java -version'				
 				sh 'mvn clean package'
 				sh 'mvn -version'
             }
