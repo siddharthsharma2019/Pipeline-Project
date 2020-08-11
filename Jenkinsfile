@@ -12,7 +12,7 @@
         stage('Sonar Quality test') { 
             steps {
                 echo " This is from Sonar test " 
-                sh '/usr/share/maven sonar:sonar'				
+                sh '/usr/bin/mvn sonar:sonar'				
 				echo " Code is having good quality  "				
             }
         }
